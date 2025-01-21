@@ -20,8 +20,9 @@ public class CreditPaymentPlanCalculator implements ICreditCalculator<CreditRequ
     @Override
     public Payment calculate(CreditRequest param) {
         double monthlyInterestRate = param.getInterestRate() / 12 / 100;
-        int totalPayments = param.getTermCount() * 12;
+        int totalPayments = param.getTermCount();
         Double monthlyPayment = creditMonthlyPaymentCalculator.calculate(param);
+        Long returnAmount = Math.round(monthlyPayment * totalPayments);
 
         List<Installment> installments = new ArrayList<>();
         double remainingAmount = param.getAmount();
@@ -32,10 +33,13 @@ public class CreditPaymentPlanCalculator implements ICreditCalculator<CreditRequ
             remainingAmount -= principalPayment;
             remainingAmount = (remainingAmount < 0.1) ? 0 : remainingAmount;
 
-            Installment installment = new Installment(i, param.getAmount(), interestPayment, principalPayment, remainingAmount);
+            Installment installment = new Installment(i, Math.round(monthlyPayment),
+                                                         Math.round(interestPayment),
+                                                         Math.round(principalPayment),
+                                                         Math.round(remainingAmount));
             installments.add(installment);
         }
 
-        return new Payment(param, installments);
+        return new Payment(returnAmount, param, installments);
     }
 }

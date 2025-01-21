@@ -10,6 +10,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class Payment {
+    private Long returnAmount;
     private CreditRequest request;
     private List<Installment> installments;
 }
