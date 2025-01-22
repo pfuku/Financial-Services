@@ -17,8 +17,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan("org.finance")
 //@EnableJpaRepositories("org.finance.db")
 //@EntityScan("org.finance.entity")
-@PropertySource("classpath:application.properties")
-@OpenAPIDefinition(info = @Info(title = "Financial Services API", version="1.0"))
+ @OpenAPIDefinition(info = @Info(title = "Financial Services API", version="1.0"))
 public class FinanceAPIStarter {
     public static void main(String[] args) {
         SpringApplication springBootApplication = new SpringApplication(FinanceAPIStarter.class);

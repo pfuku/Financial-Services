@@ -16,7 +16,7 @@ public class CreditController {
     @Autowired
     ICreditCalculator<CreditRequest, Payment> creditPaymentPlanCalculator;
 
-    @PostMapping("calculate")
+    @PostMapping("calculate/payment")
     public Payment calculate(@RequestBody CreditRequest param) {
         return creditPaymentPlanCalculator.calculate(param);
     }

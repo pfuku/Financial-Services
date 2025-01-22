@@ -11,6 +11,7 @@
     <modules>
         <module>FinanceAPIStarter</module>
         <module>FinanceCreditController</module>
+        <module>FinanceDepositController</module>
     </modules>
 
     <parent>

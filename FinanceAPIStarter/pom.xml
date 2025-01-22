@@ -30,6 +30,11 @@
             <artifactId>FinanceCreditController</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.finance.common</groupId>
+            <artifactId>FinanceDepositController</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
