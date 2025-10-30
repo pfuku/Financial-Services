@@ -15,9 +15,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableAspectJAutoProxy
 @ComponentScan("org.finance")
-//@EnableJpaRepositories("org.finance.db")
-//@EntityScan("org.finance.entity")
- @OpenAPIDefinition(info = @Info(title = "Financial Services API", version="1.0"))
+@EnableJpaRepositories("org.finance.infra.database.repository")
+@EntityScan("org.finance.infra.database.entity")
+@OpenAPIDefinition(info = @Info(title = "Financial Services API", version="1.0"))
 public class FinanceAPIStarter {
     public static void main(String[] args) {
         SpringApplication springBootApplication = new SpringApplication(FinanceAPIStarter.class);

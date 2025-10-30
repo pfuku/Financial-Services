@@ -8,6 +8,8 @@ import org.finance.credit.model.CreditRequest;
 import org.finance.credit.model.Payment;
 import org.finance.deposit.calculate.IDepositCalculator;
 import org.finance.deposit.model.DepositRequest;
+import org.finance.infra.database.entity.UserEntity;
+import org.finance.infra.database.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,16 +27,17 @@ public class GenericController {
     @Autowired
     IDepositCalculator<DepositRequest, Double> termDepositCalculator;
 
+    @Autowired
+    UserRepository userRepository;
+
     @PostMapping("/find")
     public GenericResponse find(@RequestBody GenericRequest param) {
         Gson gson = new Gson();
         String command = param.getCommand();
         String payload = param.getPayload();
 
-        if (command.equalsIgnoreCase("credit")) {
-            Payment payment = creditPaymentPlanCalculator.calculate(new CreditRequest(payload));
-            return new GenericResponse(command, gson.toJson(payment));
-        }
-        return new GenericResponse(param.getCommand() ,"not found!" );
+        UserEntity user = userRepository.findByUserNameAndState("jdoe", 1);
+
+        return new GenericResponse(user.getUserName(), user.getUserEmailAddress());
     }
 }
