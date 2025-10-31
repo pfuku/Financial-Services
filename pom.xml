@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>FinanceAPIStarter</module>
-        <module>FinanceCreditController</module>
         <module>FinanceDepositController</module>
         <module>FinanceInfraDatabase</module>
         <module>FinanceWalletController</module>
@@ -90,6 +89,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+            <version>3.18.0</version>
         </dependency>
 
         <dependency>
