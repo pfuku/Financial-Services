@@ -32,7 +32,7 @@ public class UserEntity implements Serializable {
     @Column(name = "SURNAME", length = 50)
     private String surName;
 
-    @Column(name = "ADDRESS", length = 255)
+    @Column(name = "ADDRESS", length = 200)
     private String address;
 
     @Column(name = "CREATEDATE")
