@@ -35,6 +35,9 @@ public class UserEntity implements Serializable {
     @Column(name = "CREATEDATE")
     private Long createDate;
 
+    @Column(name = "CREATETIME")
+    private Long createTime;
+
     @Column(name = "STATUS")
     private Integer status;
 
