@@ -14,8 +14,7 @@
     <name>FinanceAPIStarter</name>
 
     <properties>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
+        <maven.compiler.release>23</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -40,6 +39,11 @@
             <artifactId>FinanceInfraDatabase</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.finance.common</groupId>
+            <artifactId>FinanceWalletController</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -49,7 +53,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <phase>install</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
@@ -57,6 +61,7 @@
                             <outputDirectory>${project.build.directory}/lib</outputDirectory>
                             <includeScope>runtime</includeScope>
                             <excludeScope>provided</excludeScope>
+                            <excludeArtifactIds>FinanceCreditController,FinanceDepositController,FinanceInfraDatabase,FinanceWalletController</excludeArtifactIds>
                         </configuration>
                     </execution>
                 </executions>

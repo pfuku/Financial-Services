@@ -10,11 +10,20 @@
     </parent>
 
     <artifactId>FinanceWalletController</artifactId>
+    <packaging>jar</packaging>
+    <name>FinanceWalletController</name>
 
     <properties>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
+        <maven.compiler.release>23</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.finance.common</groupId>
+            <artifactId>FinanceInfraDatabase</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
