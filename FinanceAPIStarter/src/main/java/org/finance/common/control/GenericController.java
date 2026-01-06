@@ -20,11 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/generic")
 public class GenericController {
-    @Autowired
-    ICreditCalculator<CreditRequest, Payment> creditPaymentPlanCalculator;
-
-    @Autowired
-    IDepositCalculator<DepositRequest, Double> termDepositCalculator;
 
     @Autowired
     UserRepository userRepository;

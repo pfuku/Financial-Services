@@ -13,6 +13,7 @@
         <module>FinanceDepositController</module>
         <module>FinanceInfraDatabase</module>
         <module>FinanceWalletController</module>
+        <module>FinanceCreditController</module>
     </modules>
 
     <parent>
