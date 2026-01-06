@@ -1,0 +1,7 @@
+{
+  "amount": 100000.0,
+  "interestRate": 36,
+  "termCount": 12,
+  "kkdfRate": 15.0,
+  "bsmvRate": 15.0
+}
