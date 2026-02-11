@@ -2,6 +2,7 @@ package org.finance.deposit.control;
 
 import org.finance.deposit.calculate.IDepositCalculator;
 import org.finance.deposit.model.DepositRequest;
+import org.finance.deposit.model.TermDepositResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DepositController {
 
     @Autowired
-    IDepositCalculator<DepositRequest, Double> termDepositCalculator;
+    IDepositCalculator<DepositRequest, TermDepositResponse> termDepositCalculator;
 
     @PostMapping("calculate/term")
-    public Double calculateTermDeposit(@RequestBody DepositRequest param) {
+    public TermDepositResponse calculateTermDeposit(@RequestBody DepositRequest param) {
         return termDepositCalculator.calculate(param);
     }
 

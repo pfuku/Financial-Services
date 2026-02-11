@@ -105,6 +105,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
 
         <dependency>
@@ -176,7 +177,7 @@
                     <path>
                         <groupId>org.projectlombok</groupId>
                         <artifactId>lombok</artifactId>
-                        <version>1.18.36</version>
+                        <version>${lombok.version}</version>
                     </path>
                 </annotationProcessorPaths>
             </configuration>
@@ -187,6 +188,7 @@
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <lombok.version>1.18.38</lombok.version>
     </properties>
 
 </project>
